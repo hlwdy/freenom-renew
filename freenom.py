@@ -33,6 +33,7 @@ class FreeNom:
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/79.0.3945.130 Safari/537.36'
         })
 
+        global LOGIN_URL,DOMAIN_STATUS_URL,RENEW_DOMAIN_URL
         LOGIN_URL=LOGIN_URL.replace('my.freenom.com',proxy_)
         DOMAIN_STATUS_URL=DOMAIN_STATUS_URL.replace('my.freenom.com',proxy_)
         RENEW_DOMAIN_URL=RENEW_DOMAIN_URL.replace('my.freenom.com',proxy_)
