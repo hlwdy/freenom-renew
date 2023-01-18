@@ -5,6 +5,13 @@ on:
       - main
   schedule:
     - cron: '0 18 * * 1'
+  workflow_dispatch:
+    inputs:
+      unconditional-invoking:
+        description: 'test'
+        type: boolean
+        required: true
+        default: true
 
 jobs:
   autorun:
