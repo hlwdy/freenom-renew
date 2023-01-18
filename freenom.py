@@ -24,7 +24,7 @@ login_status_ptn = re.compile('<a href="logout.php">Logout</a>', re.I)
 
 
 class FreeNom:
-    def __init__(self, username: str, password: str):
+    def __init__(self, username: str, password: str, proxy_: str):
         self._u = username
         self._p = password
 
@@ -32,6 +32,10 @@ class FreeNom:
         self._s.headers.update({
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/79.0.3945.130 Safari/537.36'
         })
+
+        LOGIN_URL=LOGIN_URL.replace('my.freenom.com',proxy_)
+        DOMAIN_STATUS_URL=DOMAIN_STATUS_URL.replace('my.freenom.com',proxy_)
+        RENEW_DOMAIN_URL=RENEW_DOMAIN_URL.replace('my.freenom.com',proxy_)
 
     def _login(self) -> bool:
         self._s.headers.update({
